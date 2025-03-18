@@ -24,9 +24,9 @@ const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem }) => {
     }
 
     function unitMapping(unit: string): string {
-        if (unit === 'un' && amount > 1) return 'unidade'
+        if (unit === 'un' && amount > 1) return 'unidades'
         if (unit === 'un') return 'unidade'
-        if (unit === 'un.' && amount > 1) return 'unidade'
+        if (unit === 'un.' && amount > 1) return 'unidades'
         if (unit === 'un.') return 'unidade'
         if (unit === 'kg' && amount > 1) return 'quilos'
         if (unit === 'kg') return 'quilo'

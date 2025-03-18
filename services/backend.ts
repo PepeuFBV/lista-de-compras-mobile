@@ -51,6 +51,9 @@ async function createItem(item: ItemRequest) {
             unit: item.unit.toLowerCase(),
             status: item.status.toLowerCase()
         }
+        if (newItem.unit === 'un' || newItem.unit === 'un.' || newItem.unit === 'unidade') newItem.unit = 'unidades'
+        else if (newItem.unit === 'kg') newItem.unit = 'quilos'
+        else if (newItem.unit === 'l') newItem.unit = 'litros'
         const response = await fetch(`${route}/items`, {
             method: 'POST',
             headers: commonHeaders,
