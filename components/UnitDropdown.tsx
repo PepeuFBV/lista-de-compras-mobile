@@ -40,6 +40,10 @@ const UnitDropdown: React.FC<UnitDropdownProps> = ({ amount, unit, onAmountChang
         onAmountChange(numericText)
     }
 
+    function handleUnitChange(text: string) {
+        onUnitChange(text)
+    }
+
     return (
         <View className='flex flex-row space-x-0'>
             <View className='w-fit flex flex-col items-start space-y-2 pl-4'>
@@ -56,7 +60,7 @@ const UnitDropdown: React.FC<UnitDropdownProps> = ({ amount, unit, onAmountChang
                 <SelectDropdown
                     data={options}
                     onSelect={(selectedItem, index) => {
-                        console.log(selectedItem, index)
+                        handleUnitChange(selectedItem.title)
                     }}
                     renderButton={(selectedItem, isOpened) => {
                         return (

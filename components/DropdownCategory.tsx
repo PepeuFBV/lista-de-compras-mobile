@@ -20,15 +20,16 @@ function pickIcon(itemType: string) {
 
 interface DropdownCategoryProps {
     title?: string
+    setCategory: (value: string) => void
 }
-const DropdownCategory: React.FC<DropdownCategoryProps> = ({ title = 'Categoria' }) => {
+const DropdownCategory: React.FC<DropdownCategoryProps> = ({ title = 'Categoria', setCategory }) => {
     return (
         <View style={{ flexDirection: 'column', gap: 8 }}>
             <Text className='text-[#AFABB6]'>{title}</Text>
             <SelectDropdown
                 data={options}
                 onSelect={(selectedItem, index) => {
-                    console.log(selectedItem, index)
+                    setCategory(selectedItem.title)
                 }}
                 renderButton={(selectedItem, isOpened) => {
                     return (
