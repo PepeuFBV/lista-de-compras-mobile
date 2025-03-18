@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     },
     dropdownButtonArrowStyle: {
         fontSize: 28,
+        color: '#AFABB6',
     },
     dropdownButtonIconStyle: {
         fontSize: 28,
