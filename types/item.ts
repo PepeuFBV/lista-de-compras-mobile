@@ -31,8 +31,7 @@ type ItemResponse = {
 type ItemType = {
     name: possibleTypes,
     icon: ReactNode,
-    tagClassname: string,
-    iconClassname: string
+    bgColor: string
 }
 
 export type { Item, ItemRequest, ItemResponse, ItemType }
