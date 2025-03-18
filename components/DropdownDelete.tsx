@@ -1,23 +1,30 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { View, StyleSheet, Pressable, Button } from 'react-native'
 import SelectDropdown from 'react-native-select-dropdown'
 import { EllipsisVertical } from 'lucide-react-native'
+import type { Item } from '@/types/item'
 
 interface DropdownDeleteProps {
+    item: Item
     buttonTitle?: string
+    deleteItem: (id: string) => void
 }
-const DropdownDelete: React.FC<DropdownDeleteProps> = ({ buttonTitle = 'Deletar' }) => {
+const DropdownDelete: React.FC<DropdownDeleteProps> = ({ item, buttonTitle = 'Deletar', deleteItem }) => {
+    const dropdownRef = useRef<SelectDropdown>(null)
 
     function onDelete() {
-        console.log('deletar')
+        deleteItem(item.id)
+        dropdownRef.current?.closeDropdown()
     }
 
     return (
         <View>
             <SelectDropdown
+                ref={dropdownRef}
                 data={[{ title: buttonTitle }]}
                 onSelect={(selectedItem, index) => {
                     console.log(selectedItem, index)
+                    dropdownRef.current?.closeDropdown()
                 }}
                 renderButton={(selectedItem) => {
                     return (
