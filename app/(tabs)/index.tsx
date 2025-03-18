@@ -1,13 +1,20 @@
-import { Text, View } from "@/components/Themed"
+import { Text } from '@/components/Themed'
+import { ScrollView } from 'react-native'
+import { useLayoutEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 export default function TabOneScreen() {
+    const navigation = useNavigation()
+
+    useLayoutEffect(() => { // hidding the header
+        navigation.setOptions({
+            headerShown: false,
+        })
+    }, [navigation])
+
     return (
-        <View className="flex-1 items-center justify-center bg-[#ff6347]">
-            <View className="absolute top-0 left-0 right-0 h-1/2 bg-[#ff4500]">
-                <Text className="text-4xl">test</Text>
-            </View>
-            <Text className="text-4xl">Hello rld 😎🚀</Text>
-            <View lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-        </View>
+        <ScrollView contentContainerStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} className='bg-black'>
+            <Text className='text-white'>Tab One</Text>
+        </ScrollView>
     )
 }
