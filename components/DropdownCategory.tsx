@@ -22,8 +22,6 @@ interface DropdownCategoryProps {
     title?: string
 }
 const DropdownCategory: React.FC<DropdownCategoryProps> = ({ title = 'Categoria' }) => {
-    const data = ["Option 1", "Option 2", "Option 3"]
-
     return (
         <View style={{ flexDirection: 'column', gap: 8 }}>
             <Text className='text-[#AFABB6]'>{title}</Text>
