@@ -9,6 +9,7 @@ import 'react-native-reanimated'
 import { useColorScheme } from '@/components/useColorScheme'
 
 import { NativeWindStyleSheet } from 'nativewind'
+import { ContextProvider } from '@/context/ItemsContext'
 
 NativeWindStyleSheet.setOutput({
     default: 'native',
@@ -57,8 +58,10 @@ function RootLayoutNav() {
 
     return (
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-            <Stack>
-            </Stack>
+            <ContextProvider>
+                <Stack>
+                </Stack>
+            </ContextProvider>
         </ThemeProvider>
     )
 }
