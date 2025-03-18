@@ -1,13 +1,49 @@
-import { Text, View } from "@/components/Themed"
+import React, { useLayoutEffect } from 'react'
+import { View, ScrollView, Text, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Items } from '@/components/Items'
+import { AddItem } from '@/components/AddItem'
 
 export default function TabOneScreen() {
+    const navigation = useNavigation()
+
+    useLayoutEffect(() => { // hiding the header
+        navigation.setOptions({
+            headerShown: false,
+        })
+    }, [navigation])
+
     return (
-        <View className="flex-1 items-center justify-center bg-[#ff6347]">
-            <View className="absolute top-0 left-0 right-0 h-1/2 bg-[#ff4500]">
-                <Text className="text-4xl">test</Text>
-            </View>
-            <Text className="text-4xl">Hello rld 😎🚀</Text>
-            <View lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+        <View style={[styles.mainView]}>
+            <ScrollView
+                contentContainerStyle={{
+                    alignItems: 'center',
+                }}
+                style={[styles.scrollView]}
+            >
+                <Text className='text-white text-3xl mb-10'>Lista de Compras</Text>
+                <AddItem />
+                <Items />
+            </ScrollView>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    mainView: {
+        width: '100%',
+        height: '100%',
+        paddingTop: 80,
+        backgroundColor: '#0c0c0d',
+        flex: 1,
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+    },
+    scrollView: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        flexDirection: 'column',
+    },
+})
