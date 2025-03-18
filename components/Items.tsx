@@ -39,7 +39,7 @@ const Items = () => {
     }
 
     return (
-        <View className='w-full flex flex-col space-x-2 px-4 items-center'>
+        <View className='w-full flex flex-col px-4 items-center'>
             {items.map(item => (
                 <Item key={item.id} item={item} updateItem={update} deleteItem={deleteI} />
             ))}

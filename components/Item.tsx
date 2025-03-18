@@ -36,7 +36,7 @@ const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem }) => {
     }
 
     return (
-        <View className='w-full max-w-[720px] h-[68px] flex flex-row justify-between items-center space-x-10 bg-[#17171A] border border-[#252529] rounded-lg px-4 transition-colors duration-500 ease-in-out'>
+        <View className='mb-3 w-full max-w-[720px] h-[68px] flex flex-row justify-between items-center space-x-10 bg-[#17171A] border border-[#252529] rounded-lg px-4 transition-colors duration-500 ease-in-out'>
             <View className='flex flex-row items-center justify-start space-x-4 mb-1 bg-transparent'>
                 <CheckBox isChecked={status === 'done'} onClick={handleCheckBoxClick} style={{ width: 20, height: 20 }} checkBoxColor='#A881E6' />
                 <View className='bg-transparent'>

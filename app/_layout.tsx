@@ -30,8 +30,8 @@ SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
     const [loaded, error] = useFonts({
-        'Manrope-Regular': require('@/assets/fonts/Manrope-Regular.ttf'),
-        'Manrope-Bold': require('@/assets/fonts/Manrope-Bold.ttf'),
+        'Inter-Regular': require('@/assets/fonts/Inter_18pt-Regular.ttf'),
+        'Inter-Bold': require('@/assets/fonts/Inter_18pt-Bold.ttf'),
         ...FontAwesome.font,
     })
 
