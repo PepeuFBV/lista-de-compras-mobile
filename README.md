@@ -36,7 +36,12 @@ Lista de Compras Mobile is a React Native application designed to help users man
     npm install
     ```
 
-3. Start the Expo development server:
+3. Create and `.env` file in the root directory and add the following environment variables:
+    ```sh
+    EXPO_PUBLIC_API_URL={backend-api-url}
+    ```
+
+4. Start the Expo development server:
     ```sh
     npm start
     ```
