@@ -1,5 +1,8 @@
 # Lista de Compras Mobile
 
+> [!WARNING]
+> The current web deploymeny may be slow due to render's inactivity policy
+
 ## Overview
 
 Lista de Compras Mobile is a React Native application designed to help users manage their shopping lists. The app allows users to add, update, and delete items from their shopping list, categorize items, and mark items as completed.
